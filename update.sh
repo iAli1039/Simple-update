@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "you to make update of course? (flathub y ,dnf n, Both b)"
+echo "you to make update of course? (Flathub f, Dnf d, Both b)"
 
 read update
 
-if [ $update == "y" ]; then
+if [ $update == "f" ]; then
         flatpak update
-elif [ $update == "n" ]; then
+elif [ $update == "d" ]; then
     	sudo dnf update
 
 else    
