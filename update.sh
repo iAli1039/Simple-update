@@ -1,15 +1,27 @@
 #!/bin/bash
 i="0"
 
-echo "Hellooooooo olloooloo"
+cat << "EOF"
+     _    _ _   ____            _                         
+    / \  | (_) |  _ \ __ _  ___| | ____ _  __ _  ___  ___ 
+   / _ \ | | | | |_) / _` |/ __| |/ / _` |/ _` |/ _ \/ __|
+  / ___ \| | | |  __/ (_| | (__|   < (_| | (_| |  __/\__ \
+ /_/   \_\_|_| |_|   \__,_|\___|_|\_\__,_|\__, |\___||___/
+        __  __                            |___/           
+       |  \/  | __ _ _ __   __ _  __ _  ___ _ __          
+       | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|         
+       | |  | | (_| | | | | (_| | (_| |  __/ |            
+       |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|            
+                                 |___/                        
+EOF
+# echo "Hellooooooo olloooloo"
 
 while [ $i -lt 1 ]
 do
 echo "-------"
 echo " "
-echo "you to make update of course? (Flatpak packages f, System Packages s , Both b) or q for quit"
-
-read -rsn1 update
+echo "Packages to update: (Flatpak packages f, System Packages s, Both b) or q for quit"
+read -p "Choose> " update
 
 DISTRO_UPDATE_COMMAND=""
 FOUND_DISTRO=$(uname -a | awk '{print $2}')
